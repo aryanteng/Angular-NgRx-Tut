@@ -1,7 +1,15 @@
+import { Customer } from './../customer.model';
 import { createReducer, on } from '@ngrx/store';
 import { CustomerActions } from './customer.actions';
 
-const initialState = {
+export interface CustomerState {
+  customers: Customer[];
+  loading: boolean;
+  loaded: boolean;
+  error: string;
+}
+
+const initialState: CustomerState = {
   customers: [
     {
       id: 1,
@@ -22,7 +30,23 @@ export const customerReducer = createReducer(
     return {
       ...state,
       loading: true,
-      loaded: false,
+    };
+  }),
+  on(CustomerActions.loadCustomersSuccess, (state, { customers }) => {
+    return {
+      ...state,
+      customers,
+      loading: false,
+      loaded: true,
+    };
+  }),
+  on(CustomerActions.loadCustomersFailure, (state, { error }) => {
+    return {
+      ...state,
+      customers: [],
+      loading: false,
+      loaded: true,
+      error,
     };
   })
 );
