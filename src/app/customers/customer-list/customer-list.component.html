@@ -20,16 +20,16 @@
       </td> -->
     </tr>
     <tr></tr>
-    <!-- <tr *ngFor="let customer of customers$ | async">
+    <tr *ngFor="let customer of customers">
       <th scope="row">{{ customer.name }}</th>
       <td>{{ customer.phone }}</td>
       <td>{{ customer.address }}</td>
       <td>{{ customer.membership }}</td>
-      <th>
+      <!-- <th>
         <a (click)="editCustomer(customer)">edit</a>
         <br />
         <a (click)="deleteCustomer(customer)">delete</a>
-      </th>
-    </tr> -->
+      </th> -->
+    </tr>
   </tbody>
 </table>
