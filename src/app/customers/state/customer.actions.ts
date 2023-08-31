@@ -17,7 +17,7 @@ export const CustomerActions = createActionGroup({
     'Update Customer Success': props<{ customer: Customer }>(),
     'Update Customer Failure': props<{ error: string }>(),
     'Delete Customer': props<{ id: number }>(),
-    'Delete Customer Success': props<{ customer: Customer }>(),
+    'Delete Customer Success': props<{ id: number }>(),
     'Delete Customer Failure': props<{ error: string }>(),
   },
 });

@@ -11,13 +11,13 @@
   </thead>
   <tbody>
     <tr>
-      <!-- <td
+      <td
         colspan="5"
         class="alert alert-danger"
         *ngIf="error$ | async as error"
       >
         {{ error }}
-      </td> -->
+      </td>
     </tr>
     <tr></tr>
     <tr *ngFor="let customer of customers$ | async">
@@ -25,11 +25,11 @@
       <td>{{ customer.phone }}</td>
       <td>{{ customer.address }}</td>
       <td>{{ customer.membership }}</td>
-      <!-- <th>
+      <th>
         <a (click)="editCustomer(customer)">edit</a>
         <br />
         <a (click)="deleteCustomer(customer)">delete</a>
-      </th> -->
+      </th>
     </tr>
   </tbody>
 </table>

@@ -82,7 +82,7 @@ export class CustomerEffect {
       exhaustMap((action) =>
         this.customerService.deleteCustomer(action.id).pipe(
           map((customer: Customer) =>
-            CustomerActions.deleteCustomerSuccess({ customer })
+            CustomerActions.deleteCustomerSuccess({ id: customer.id })
           ),
           catchError((error) =>
             of(CustomerActions.deleteCustomerFailure({ error }))

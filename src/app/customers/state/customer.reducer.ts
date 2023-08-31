@@ -58,6 +58,60 @@ export const customerReducer = createReducer(
       loaded: true,
       error,
     };
+  }),
+  on(CustomerActions.createCustomer, (state) => {
+    return {
+      ...state,
+      loading: true,
+    };
+  }),
+  on(CustomerActions.createCustomerSuccess, (state, { customer }) => {
+    return customerAdapter.addOne(customer, state);
+  }),
+  on(CustomerActions.createCustomerFailure, (state, { error }) => {
+    return {
+      ...state,
+      loading: false,
+      loaded: true,
+      error,
+    };
+  }),
+  on(CustomerActions.updateCustomer, (state, { customer }) => {
+    return {
+      ...state,
+      loading: true,
+    };
+  }),
+  on(CustomerActions.updateCustomerSuccess, (state, { customer }) => {
+    return customerAdapter.updateOne(
+      { changes: customer, id: customer.id },
+      state
+    );
+  }),
+  on(CustomerActions.updateCustomerFailure, (state, { error }) => {
+    return {
+      ...state,
+      loaded: true,
+      loading: false,
+      error,
+    };
+  }),
+  on(CustomerActions.deleteCustomer, (state, { id }) => {
+    return {
+      ...state,
+      loading: true,
+    };
+  }),
+  on(CustomerActions.deleteCustomerSuccess, (state, { id }) => {
+    return customerAdapter.removeOne(id, state);
+  }),
+  on(CustomerActions.deleteCustomerFailure, (state, { error }) => {
+    return {
+      ...state,
+      loaded: true,
+      loading: false,
+      error,
+    };
   })
 );
 
