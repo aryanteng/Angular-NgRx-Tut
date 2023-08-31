@@ -28,7 +28,9 @@ export class CustomerEditComponent implements OnInit {
       membership: ['', Validators.required],
       id: null,
     });
+
     this.customer$.subscribe((currentCustomer) => {
+      console.log('currentCustomer', currentCustomer);
       if (currentCustomer) {
         this.customerForm.patchValue({
           name: currentCustomer.name,
@@ -47,6 +49,7 @@ export class CustomerEditComponent implements OnInit {
       phone: this.customerForm.get('phone').value,
       address: this.customerForm.get('address').value,
       membership: this.customerForm.get('membership').value,
+      id: this.customerForm.get('id').value,
     };
     if (this.customerForm.invalid) {
       return;

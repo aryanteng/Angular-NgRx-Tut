@@ -1,4 +1,3 @@
-import { selectCustomerState } from './../state/customer.reducer';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Customer } from '../customer.model';
@@ -21,6 +20,7 @@ export class CustomerListComponent implements OnInit {
     this.store.dispatch(CustomerActions.loadCustomers());
   }
   editCustomer(customer: Customer) {
+    console.log('HELLo', customer);
     this.store.dispatch(CustomerActions.loadCustomer({ id: customer.id }));
   }
   deleteCustomer(customer: Customer) {

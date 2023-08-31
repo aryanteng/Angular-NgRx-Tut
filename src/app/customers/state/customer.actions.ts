@@ -8,7 +8,7 @@ export const CustomerActions = createActionGroup({
     'Load Customers Success': props<{ customers: Customer[] }>(),
     'Load Customers Failure': props<{ error: string }>(),
     'Load Customer': props<{ id: number }>(),
-    'Load Customer Success': props<{ customer: Customer }>(),
+    'Load Customer Success': props<{ id: number }>(),
     'Load Customer Failure': props<{ error: string }>(),
     'Create Customer': props<{ customer: Customer }>(),
     'Create Customer Success': props<{ customer: Customer }>(),

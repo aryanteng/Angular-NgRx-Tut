@@ -34,7 +34,7 @@ export class CustomerEffect {
       exhaustMap((action) =>
         this.customerService.getCustomer(action.id).pipe(
           map((customer: Customer) =>
-            CustomerActions.loadCustomerSuccess({ customer })
+            CustomerActions.loadCustomerSuccess({ id: customer.id })
           ),
           catchError((error) =>
             of(CustomerActions.loadCustomerFailure({ error }))
