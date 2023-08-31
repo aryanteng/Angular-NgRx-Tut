@@ -6,13 +6,6 @@
       "address": "123 Sun Street",
       "membership": "Platinum",
       "id": 1
-    },
-    {
-      "name": "Aryan Teng",
-      "phone": "09711171503",
-      "address": "J-86, Saket",
-      "membership": "Platinum",
-      "id": 2
     }
   ]
 }
