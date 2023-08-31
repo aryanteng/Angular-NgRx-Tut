@@ -13,6 +13,55 @@
       "address": "893 Main Voulevard",
       "membership": "Pro",
       "id": 2
+    },
+    {
+      "name": "Aryan Teng",
+      "phone": "09711171503",
+      "address": "J-86, Saket",
+      "membership": "",
+      "id": 3
+    },
+    {
+      "name": null,
+      "phone": null,
+      "address": null,
+      "membership": "Pro",
+      "id": 4
+    },
+    {
+      "name": "",
+      "phone": "",
+      "address": "",
+      "membership": "",
+      "id": 5
+    },
+    {
+      "name": "",
+      "phone": "",
+      "address": "",
+      "membership": "",
+      "id": 6
+    },
+    {
+      "name": null,
+      "phone": null,
+      "address": null,
+      "membership": null,
+      "id": 7
+    },
+    {
+      "name": "Aryan Teng",
+      "phone": "09711171503",
+      "address": "J-86, Saket",
+      "membership": "Pro",
+      "id": 8
+    },
+    {
+      "name": "Aryan Teng",
+      "phone": "09711171503",
+      "address": "J-86, Saket",
+      "membership": "Platinum",
+      "id": 9
     }
   ]
 }

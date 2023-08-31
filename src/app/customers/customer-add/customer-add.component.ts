@@ -33,6 +33,10 @@ export class CustomerAddComponent implements OnInit {
       membership: this.customerForm.get('membership').value,
     };
 
+    if (this.customerForm.invalid) {
+      return;
+    }
+
     this.store.dispatch(
       CustomerActions.createCustomer({ customer: newCustomer })
     );
