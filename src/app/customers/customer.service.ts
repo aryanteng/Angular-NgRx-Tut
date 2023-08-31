@@ -11,4 +11,7 @@ export class CustomerService {
   getCustomers() {
     return this.http.get<Customer[]>(this.customersUrl);
   }
+  getCustomer(id: string) {
+    return this.http.get<Customer>(this.customersUrl + '/' + id);
+  }
 }
