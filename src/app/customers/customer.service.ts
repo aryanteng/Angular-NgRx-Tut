@@ -11,7 +11,19 @@ export class CustomerService {
   getCustomers() {
     return this.http.get<Customer[]>(this.customersUrl);
   }
-  getCustomer(id: string) {
+  getCustomer(id: number) {
     return this.http.get<Customer>(this.customersUrl + '/' + id);
+  }
+  createCustomer(customer: Customer) {
+    return this.http.post<Customer>(this.customersUrl, customer);
+  }
+  updateCustomer(customer: Customer) {
+    return this.http.patch<Customer>(
+      `${this.customersUrl}/${customer.id}`,
+      customer
+    );
+  }
+  deleteCustomer(id: number) {
+    return this.http.delete(`${this.customersUrl}/${id}`);
   }
 }

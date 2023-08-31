@@ -68,3 +68,29 @@ export const getCustomers = createSelector(
   selectCustomerState,
   customerAdapter.getSelectors().selectAll
 );
+
+export const getCustomersLoading = createSelector(
+  selectCustomerState,
+  (state: CustomerState) => state.loading
+);
+
+export const getCustomersLoaded = createSelector(
+  selectCustomerState,
+  (state: CustomerState) => state.loaded
+);
+
+export const getError = createSelector(
+  selectCustomerState,
+  (state: CustomerState) => state.error
+);
+
+export const getCurrentCustomerId = createSelector(
+  selectCustomerState,
+  (state: CustomerState) => state.selectedCustomerId
+);
+
+export const getCurrentCustomer = createSelector(
+  selectCustomerState,
+  getCurrentCustomerId,
+  (state) => state.entities[state.selectedCustomerId]
+);
